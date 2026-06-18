@@ -13,7 +13,7 @@ using Il2CppFieldInfo = Il2CppSystem.Reflection.FieldInfo;
 using Il2CppMethodInfo = Il2CppSystem.Reflection.MethodInfo;
 using Il2CppBindingFlags = Il2CppSystem.Reflection.BindingFlags;
 
-[assembly: MelonInfo(typeof(StrobeProbe.Probe), "StrobeProbe", "0.4.0", "Sam")]
+[assembly: MelonInfo(typeof(StrobeProbe.Probe), "StrobeProbe", "0.4.0", "Omnidreamer_")]
 [assembly: MelonGame("Kluge Interactive", "SynthRiders")]
 
 namespace StrobeProbe
