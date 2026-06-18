@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>StrobeProbe</AssemblyName>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <!-- EDIT THIS to your Synth Riders install (the folder containing the .exe).
+         Pick ONE branch to reference; the probe uses only core Unity APIs that are
+         identical across both, so a single build runs on both 2021 and 6000. -->
+    <GamePath>F:\SteamLibrary\steamapps\common\SynthRiders</GamePath>
+
+    <!-- ML 0.6.x layout. If you're on 0.5.x, see note in chat. -->
+    <MLNet>$(GamePath)\MelonLoader\net6</MLNet>
+    <Il2Cpp>$(GamePath)\MelonLoader\Il2CppAssemblies</Il2Cpp>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="MelonLoader">
+      <HintPath>$(MLNet)\MelonLoader.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>$(MLNet)\Il2CppInterop.Runtime.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>$(Il2Cpp)\Il2Cppmscorlib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(Il2Cpp)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- Input.GetKeyDown / KeyCode live here in Unity 2019+ proxies -->
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(Il2Cpp)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
